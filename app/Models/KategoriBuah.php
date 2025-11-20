@@ -8,8 +8,8 @@ class KategoriBuah extends Model
 {
     protected $guarded = [];
 
-    public function buah()
+    public function Supplier()
     {
-        return $this->hasMany(buah::class, 'supplier_id');
+        return $this->belongTo(Supplier::class, 'supplier_id');
     }
 }
