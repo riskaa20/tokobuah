@@ -12,4 +12,9 @@ class Supplier extends Model
     {
         return $this->hasMany(KategoriBuah::class, 'supplier_id');
     }
+
+    public function Buah()
+    {
+        return $this->hasMany(Buah::class, 'supplier_id');
+    }
 }
