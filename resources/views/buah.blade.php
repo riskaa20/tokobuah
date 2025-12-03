@@ -32,7 +32,7 @@
                         <!-- Produk 1 -->
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                            <img src="https://placehold.co/400x300/0ea5e9/ffffff?text=Laptop" alt="Laptop Pro 14"
+                            <img src="C:\Users\acer\Downloads\Fruit From Old World - Grapes.jpeg"alt="Buah Anggur"
                                 class="w-full h-48 object-cover">
                             <div class="p-6">
                                 <h3 class="text-xl font-bold text-slate-900 mb-2">{{ $buah->nama }}</h3>
