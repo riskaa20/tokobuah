@@ -60,8 +60,8 @@
             </a>
             <div class="hidden md:flex items-center space-x-6">
                 <a href="{{ route('home') }}" class="text-slate-600 hover:text-sky-500 transition-colors duration-300">Beranda</a>
-                <a href="{{ route('produk') }}" class="text-slate-600 hover:text-sky-500 transition-colors duration-300">Produk</a>
-                <a href="{{ route('pelanggan') }}" class="text-slate-600 hover:text-sky-500 transition-colors duration-300">Pelanggan</a>
+                <a href="{{ route('kategori') }}" class="text-slate-600 hover:text-sky-500 transition-colors duration-300">Kategori</a>
+                <a href="{{ route('supplier') }}" class="text-slate-600 hover:text-sky-500 transition-colors duration-300">Supplier</a>
 
             </div>
             <div class="flex items-center gap-4">
@@ -76,7 +76,7 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 flex flex-col space-y-4">
             <a href="{{ route('home') }}" class="text-slate-600 hover:text-sky-500 transition-colors duration-300">Beranda</a>
-            <a href="{{ route('produk') }}" class="text-slate-600 hover:text-sky-500 transition-colors duration-300">Produk</a>
+            <a href="{{ route('kategori') }}" class="text-slate-600 hover:text-sky-500 transition-colors duration-300">Produk</a>
             <a href="#" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-5 py-2 rounded-lg text-center">Login</a>
         </div>
     </header>

@@ -6,20 +6,25 @@
             <div class="absolute inset-0 animated-gradient opacity-10"></div>
             <div class="container mx-auto px-6 text-center relative z-10">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-4">
-                    TOKO BUAH BUAHAN SEGAR
+                    Manajemen Inventaris & Penjualan Terintegrasi
                 </h1>
                 <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-                    by alfin and riska
+                    Kelola data barang, pantau pelanggan, dan proses transaksi dengan cepat dalam satu platform modern yang intuitif.
                 </p>
+                <a href="#transaksi" class="bg-sky-500 text-white font-bold px-8 py-4 rounded-lg text-lg hover:bg-sky-600 transition-transform duration-300 hover:scale-105 inline-block">
+                    Mulai Transaksi
+                </a>
             </div>
         </section>
 
         <!-- ===== Produk E-Commerce Section ===== -->
+
+
         <section id="produk" class="py-20 bg-slate-100">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Semua Buah Tersedia</h2>
-                    <p class="text-slate-600 mt-2">Ayo nikmati buah buahan segar dari toko kami</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Daftar Produk Tersedia</h2>
+                    <p class="text-slate-600 mt-2">Jelajahi dan kelola semua produk Anda di sini.</p>
                 </div>
                 <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
@@ -27,62 +32,24 @@
                         <!-- Produk 1 -->
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                            <img src="https://placehold.co/400x300/0ea5e9/ffffff?text=Laptop" alt="Buah anggur"
+                            <img src="https://placehold.co/400x300/0ea5e9/ffffff?text=Laptop" alt="Laptop Pro 14"
                                 class="w-full h-48 object-cover">
                             <div class="p-6">
-                                <h3 class="text-xl font-bold text-slate-900 mb-2">{{ $buah->nama_buah }}</h3>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2">{{ $buah->nama }}</h3>
                                 <p class="text-sky-500 font-semibold text-lg mb-2">{{ $buah->harga }}</p>
                                 <p class="text-slate-500">Stok: <span>{{ $buah->stok }}</span></p>
                             </div>
                         </div>
                     @endforeach
+                    </section>
 
-
-                    <!-- Produk 2 -->
-                    <div
-                        class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://placehold.co/400x300/4f46e5/ffffff?text=Keyboard" alt="Keyboard Mekanikal"
-                            class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Keyboard Mekanikal</h3>
-                            <p class="text-sky-500 font-semibold text-lg mb-2">Rp 1.200.000</p>
-                            <p class="text-slate-500">Stok: <span>80</span></p>
-                        </div>
-                    </div>
-
-                    <!-- Produk 3 -->
-                    <div
-                        class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://placehold.co/400x300/7c3aed/ffffff?text=Mouse" alt="Mouse Gaming RGB"
-                            class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Mouse Gaming RGB</h3>
-                            <p class="text-sky-500 font-semibold text-lg mb-2">Rp 750.000</p>
-                            <p class="text-slate-500">Stok: <span>110</span></p>
-                        </div>
-                    </div>
-
-                    <!-- Produk 4 -->
-                    <div
-                        class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://placehold.co/400x300/14b8a6/ffffff?text=Monitor" alt="Monitor Ultrawide 34"
-                            class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Monitor Ultrawide 34"</h3>
-                            <p class="text-sky-500 font-semibold text-lg mb-2">Rp 8.500.000</p>
-                            <p class="text-slate-500">Stok: <span>15</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- ===== Statistik Section ===== -->
         <section id="stats" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Statistik Bisnis Anda</h2>
-                    <p class="text-slate-600 mt-2">Jangan lupa untuk terus membeli buah disini</p>
+                    <p class="text-slate-600 mt-2">Pantau performa bisnis Anda secara real-time.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
                     <div class="bg-gradient-to-br from-purple-600 to-indigo-600 p-8 rounded-2xl shadow-lg flex items-center gap-6">
