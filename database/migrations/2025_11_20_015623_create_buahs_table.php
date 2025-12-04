@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('nama_buah');
             $table->integer('harga');
             $table->integer('stok');
-            $table->string('kategori_id');
-            $table->string('supplier_id');
+            $table->unsignedBigInteger('kategori_id');
+            $table->unsignedBigInteger('supplier_id');
+
             $table->timestamps();
         });
     }

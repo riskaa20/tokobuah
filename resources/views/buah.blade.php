@@ -6,10 +6,10 @@
             <div class="absolute inset-0 animated-gradient opacity-10"></div>
             <div class="container mx-auto px-6 text-center relative z-10">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-4">
-                    Manajemen Inventaris & Penjualan Terintegrasi
+                    Penjualan Buah
                 </h1>
                 <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-                    Kelola data barang, pantau pelanggan, dan proses transaksi dengan cepat dalam satu platform modern yang intuitif.
+                    Kelola data buah, pantau supplier, dan proses transaksi dengan cepat dalam satu platform modern yang intuitif.
                 </p>
                 <a href="#transaksi" class="bg-sky-500 text-white font-bold px-8 py-4 rounded-lg text-lg hover:bg-sky-600 transition-transform duration-300 hover:scale-105 inline-block">
                     Mulai Transaksi
@@ -23,10 +23,10 @@
         <section id="produk" class="py-20 bg-slate-100">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Daftar Produk Tersedia</h2>
-                    <p class="text-slate-600 mt-2">Jelajahi dan kelola semua produk Anda di sini.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Daftar Kategori Buah Tersedia</h2>
+                    <p class="text-slate-600 mt-2">Jelajahi dan kelola semua buah buahan Anda di sini.</p>
                 </div>
-                <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div id="product-list" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
 
                     @foreach ($databuah as $buah)
                         <!-- Produk 1 -->

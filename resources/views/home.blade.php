@@ -1,166 +1,84 @@
 @extends('layout.tm')
 
 @section('content')
-  <!-- ===== Hero Section ===== -->
-        <section id="hero" class="relative overflow-hidden py-20 md:py-32 bg-white">
-            <div class="absolute inset-0 animated-gradient opacity-10"></div>
-            <div class="container mx-auto px-6 text-center relative z-10">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-4">
-                    TOKO BUAH BUAHAN SEGAR
-                </h1>
-                <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-                    by alfin and riska
+
+<body class="bg-gradient-to-b from-[#CDE8FF] to-[#A6D4FF]">
+
+<!-- ===== Hero Section ===== -->
+<section id="hero" class="relative overflow-hidden py-20 md:py-32 bg-white">
+    <div class="absolute inset-0 animated-gradient opacity-10"></div>
+    <div class="container mx-auto px-6 text-center relative z-10">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-4">
+            TOKO BUAH BUAHAN SEGAR
+        </h1>
+        <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8"></p>
+    </div>
+</section>
+
+<!-- ===== Produk E-Commerce Section ===== -->
+<section id="produk" class="py-20 bg-slate-100">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Semua Buah Tersedia</h2>
+            <p class="text-slate-600 mt-2">Ayo nikmati buah buahan segar dari toko kami</p>
+        </div>
+
+        <!-- GRID PRODUK -->
+        <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; margin-top: 30px;">
+
+    @foreach($databuah as $buah)
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,.1);">
+
+                 <alt="{{ $buah->nama_buah }}"
+                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+
+            <h3 style="margin-top: 10px; font-size: 20px;">
+                {{ $buah->nama_buah }}
+            </h3>
+
+            <p>Rp {{ number_format($buah->harga, 0, ',', '.') }}</p>
+            <p>Stok: {{ $buah->stok }}</p>
+        </div>
+    @endforeach
+
+</div>
+
+
+        </div> <!-- END GRID -->
+
+    </div>
+</section>
+
+<!-- ===== Keranjang Section ===== -->
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="bg-white p-8 rounded-2xl shadow-lg max-w-2xl mx-auto">
+
+            <h3 class="text-2xl font-bold text-slate-900 mb-6 text-center">Keranjang</h3>
+
+            <div id="transaction-items" class="space-y-4 mb-6 min-h-[150px]">
+                <p id="empty-cart-message" class="text-slate-500 text-center pt-10">
+                    Keranjang masih kosong...
                 </p>
             </div>
-        </section>
 
-        <!-- ===== Produk E-Commerce Section ===== -->
-        <section id="produk" class="py-20 bg-slate-100">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Semua Buah Tersedia</h2>
-                    <p class="text-slate-600 mt-2">Ayo nikmati buah buahan segar dari toko kami</p>
+            <div class="border-t border-slate-200 pt-4 space-y-4">
+                <div class="flex justify-between text-lg font-semibold text-slate-900">
+                    <span>Total</span>
+                    <span id="total-price">Rp 0</span>
                 </div>
-                <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-                    @foreach ($databuah as $buah)
-                        <!-- Produk 1 -->
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                            <img src="https://placehold.co/400x300/0ea5e9/ffffff?text=Laptop" alt="Buah anggur"
-                                class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-slate-900 mb-2">{{ $buah->nama_buah }}</h3>
-                                <p class="text-sky-500 font-semibold text-lg mb-2">{{ $buah->harga }}</p>
-                                <p class="text-slate-500">Stok: <span>{{ $buah->stok }}</span></p>
-                            </div>
-                        </div>
-                    @endforeach
-
-
-                    <!-- Produk 2 -->
-                    <div
-                        class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://placehold.co/400x300/4f46e5/ffffff?text=Keyboard" alt="Keyboard Mekanikal"
-                            class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Keyboard Mekanikal</h3>
-                            <p class="text-sky-500 font-semibold text-lg mb-2">Rp 1.200.000</p>
-                            <p class="text-slate-500">Stok: <span>80</span></p>
-                        </div>
-                    </div>
-
-                    <!-- Produk 3 -->
-                    <div
-                        class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://placehold.co/400x300/7c3aed/ffffff?text=Mouse" alt="Mouse Gaming RGB"
-                            class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Mouse Gaming RGB</h3>
-                            <p class="text-sky-500 font-semibold text-lg mb-2">Rp 750.000</p>
-                            <p class="text-slate-500">Stok: <span>110</span></p>
-                        </div>
-                    </div>
-
-                    <!-- Produk 4 -->
-                    <div
-                        class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://placehold.co/400x300/14b8a6/ffffff?text=Monitor" alt="Monitor Ultrawide 34"
-                            class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Monitor Ultrawide 34"</h3>
-                            <p class="text-sky-500 font-semibold text-lg mb-2">Rp 8.500.000</p>
-                            <p class="text-slate-500">Stok: <span>15</span></p>
-                        </div>
-                    </div>
-                </div>
+                <button
+                    id="process-payment-button"
+                    class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg transition-transform duration-300 hover:scale-105 disabled:bg-slate-400 disabled:cursor-not-allowed"
+                    disabled>
+                    Proses Pembayaran
+                </button>
             </div>
-        </section>
 
-        <!-- ===== Statistik Section ===== -->
-        <section id="stats" class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Statistik Bisnis Anda</h2>
-                    <p class="text-slate-600 mt-2">Jangan lupa untuk terus membeli buah disini</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
-                    <div class="bg-gradient-to-br from-purple-600 to-indigo-600 p-8 rounded-2xl shadow-lg flex items-center gap-6">
-                        <i data-lucide="dollar-sign" class="w-12 h-12"></i>
-                        <div>
-                            <p class="text-4xl font-bold">Rp 12.5M</p>
-                            <p class="text-indigo-200">Total Penjualan</p>
-                        </div>
-                    </div>
-                    <div class="bg-gradient-to-br from-sky-500 to-cyan-500 p-8 rounded-2xl shadow-lg flex items-center gap-6">
-                        <i data-lucide="users" class="w-12 h-12"></i>
-                        <div>
-                            <p class="text-4xl font-bold">1,204</p>
-                            <p class="text-cyan-200">Pelanggan Aktif</p>
-                        </div>
-                    </div>
-                    <div class="bg-gradient-to-br from-emerald-500 to-teal-500 p-8 rounded-2xl shadow-lg flex items-center gap-6">
-                        <i data-lucide="package-check" class="w-12 h-12"></i>
-                        <div>
-                            <p class="text-4xl font-bold">8,921</p>
-                            <p class="text-teal-200">Barang Terjual</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== Form Transaksi Section ===== -->
-        <section id="transaksi" class="py-20 bg-slate-100">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Proses Transaksi Baru</h2>
-                    <p class="text-slate-600 mt-2">Buat pesanan baru untuk pelanggan Anda dengan mudah.</p>
-                </div>
-                <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- Kolom Form -->
-                    <div class="bg-white p-8 rounded-2xl shadow-lg">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-6">Detail Pesanan</h3>
-                        <form id="transaction-form" class="space-y-6">
-                            <div>
-                                <label for="customer-select" class="block text-sm font-medium text-slate-600 mb-2">Pilih Pelanggan</label>
-                                <select id="customer-select" class="w-full bg-slate-100 border border-slate-300 text-slate-900 rounded-lg p-3 focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
-                                </select>
-                            </div>
-                            <div>
-                                <label for="product-select" class="block text-sm font-medium text-slate-600 mb-2">Pilih Produk</label>
-                                <select id="product-select" class="w-full bg-slate-100 border border-slate-300 text-slate-900 rounded-lg p-3 focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
-                                </select>
-                            </div>
-                            <div>
-                                <label for="quantity-input" class="block text-sm font-medium text-slate-600 mb-2">Jumlah</label>
-                                <input type="number" id="quantity-input" value="1" min="1" class="w-full bg-slate-100 border border-slate-300 text-slate-900 rounded-lg p-3 focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
-                            </div>
-                            <button type="submit" class="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-transform duration-300 hover:scale-105">
-                                <i data-lucide="plus-circle" class="w-5 h-5"></i>
-                                Tambah Barang
-                            </button>
-                        </form>
-                    </div>
-
-                    <!-- Kolom Keranjang -->
-                    <div class="bg-white p-8 rounded-2xl shadow-lg">
-                         <h3 class="text-2xl font-bold text-slate-900 mb-6">Keranjang</h3>
-                         <div id="transaction-items" class="space-y-4 mb-6 min-h-[150px]">
-                            <p id="empty-cart-message" class="text-slate-500 text-center pt-10">Keranjang masih kosong...</p>
-                         </div>
-                         <div class="border-t border-slate-200 pt-4 space-y-4">
-                              <div class="flex justify-between text-lg font-semibold text-slate-900">
-                                  <span>Total</span>
-                                  <span id="total-price">Rp 0</span>
-                              </div>
-                              <button id="process-payment-button" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg transition-transform duration-300 hover:scale-105 disabled:bg-slate-400 disabled:cursor-not-allowed" disabled>
-                                  Proses Pembayaran
-                              </button>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
+    </div>
+</section>
 
 @endsection
