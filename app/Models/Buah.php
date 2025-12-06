@@ -6,21 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Buah extends Model
 {
+    protected $table = 'buah';
+
     protected $fillable = [
         'nama_buah',
-        'harga',
+        'id_kategori',
+        'id_supplier',
         'stok',
-        'kategori_id',
-        'supplier_id'
+        'harga'
     ];
 
-    public function KategoriBuah()
-    {
-        return $this->belongsTo(KategoriBuah::class);
+    public function kategori() {
+        return $this->belongsTo(Kategori::class, 'id_kategori');
     }
 
-    public function Supplier()
-    {
-        return $this->belongsTo(Supplier::class);
+    public function supplier() {
+        return $this->belongsTo(Supplier::class, 'id_supplier');
     }
 }

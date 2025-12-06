@@ -6,15 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Supplier extends Model
 {
-    protected $guarded = [];
+    protected $table = 'supplier';
 
-    public function KategoriBuah()
-    {
-        return $this->hasMany(KategoriBuah::class, 'supplier_id');
-    }
+    protected $fillable = ['nama_supplier', 'alamat', 'telepon'];
 
-    public function Buah()
-    {
-        return $this->hasMany(Buah::class, 'supplier_id');
+    public function buah() {
+        return $this->hasMany(Buah::class, 'id_supplier');
     }
 }
